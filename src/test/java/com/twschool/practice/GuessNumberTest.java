@@ -52,4 +52,18 @@ public class GuessNumberTest {
     }
 
 
+    @Test
+    public void should_return_0A0B_1_correct_when_given_answer_1_2_3_4_and_input_5_6_7_8() {
+        //given
+        List<String> answer = Arrays.asList("1","2","3","4");
+        List<String> input = Arrays.asList("5 6 7 8".split(" "));
+        AnswerCheckTool answerCheckTool = new AnswerCheckTool(answer, input);
+
+        //when
+        String result = answerCheckTool.printResult();
+
+        //then
+        assertEquals("0A0B", result);
+    }
+
 }
