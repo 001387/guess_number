@@ -36,5 +36,20 @@ public class GuessNumberTest {
         //then
         assertEquals("0A2B", result);
     }
-    
+
+    @Test
+    public void should_return_1A2B_1_correct_when_given_answer_1_2_3_4_and_input_0_3_2_4() {
+        //given
+        List<String> answer = Arrays.asList("1","2","3","4");
+        List<String> input = Arrays.asList("0 3 2 4".split(" "));
+        AnswerCheckTool answerCheckTool = new AnswerCheckTool(answer, input);
+
+        //when
+        String result = answerCheckTool.printResult();
+
+        //then
+        assertEquals("1A2B", result);
+    }
+
+
 }
