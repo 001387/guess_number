@@ -81,5 +81,18 @@ public class GuessNumberTest {
         assertEquals("0A4B", result);
     }
 
+    @Test
+    public void should_return_4A0B_1_correct_when_given_answer_1_2_3_4_and_input_1_2_3_4() {
+        //given
+        List<String> answer = Arrays.asList("1","2","3","4");
+        List<String> input = Arrays.asList("1 2 3 4".split(" "));
+        AnswerCheckTool answerCheckTool = new AnswerCheckTool(answer, input);
+
+        //when
+        String result = answerCheckTool.printResult();
+
+        //then
+        assertEquals("4A0B", result);
+    }
 
 }
