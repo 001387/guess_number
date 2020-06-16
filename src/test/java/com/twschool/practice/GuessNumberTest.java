@@ -22,4 +22,19 @@ public class GuessNumberTest {
         //then
         assertEquals("1A0B", result);
     }
+
+    @Test
+    public void should_return_0A2B_1_correct_when_given_answer_1_2_3_4_and_input_2_4_7_8() {
+        //given
+        List<String> answer = Arrays.asList("1","2","3","4");
+        List<String> input = Arrays.asList("2 4 7 8".split(" "));
+        AnswerCheckTool answerCheckTool = new AnswerCheckTool(answer, input);
+
+        //when
+        String result = answerCheckTool.printResult();
+
+        //then
+        assertEquals("0A2B", result);
+    }
+    
 }
