@@ -95,4 +95,24 @@ public class GuessNumberTest {
         assertEquals("4A0B", result);
     }
 
+    @Test
+    public void should_return_Wrong_Input_correct_when_given_answer_1_2_3_4_and_input_1_1_2_3() {
+        //given
+        List<String> answer = Arrays.asList("1","2","3","4");
+        List<String> input = Arrays.asList("1 1 2 3".split(" "));
+        AnswerCheckTool answerCheckTool = new AnswerCheckTool(answer, input);
+
+        //when
+        String result = answerCheckTool.printResult();
+
+        //then
+        assertEquals("Wrong Input", result);
+    }
+
+    //TODO should_return_true_when_get_is_valid_format_given_answer_1234(){}
+    //TODO should_return_false_when_get_is_valid_format_given_answer_123(){}
+    //TODO should_return_false_when_get_is_valid_format_given_answer_abcd(){} //判断是否是数字
+    //TODO should_return_false_when_get_is_valid_format_given_answer_1123(){} //重复数字
+
+
 }

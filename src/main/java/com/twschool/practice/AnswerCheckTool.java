@@ -16,10 +16,12 @@ public class AnswerCheckTool {
     }
 
     public String printResult() {
+
         checkNumber();
         return String.valueOf(ANum) + "A" + String.valueOf(BNum) + "B";
     }
 
+    //方法二：可以直接判断对应的index上的值是否相等，else if值包含
     private void checkNumber() {
         for (int i = 0 ; i < input.size(); i++ ) {
             if(answer.contains(input.get(i))){
